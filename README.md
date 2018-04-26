@@ -19,8 +19,8 @@
 ### State
 
  - App keeps track of state (data) - `{ key: 'value' }`
-    and contains methods (functions) - `methodName() {}`
-    to interact with state - `this.setState({})`
+ - and contains methods (functions) - `methodName() {}`
+ - to interact with state - `this.setState({})`
 
 ### Props
 
@@ -42,11 +42,20 @@
 
 ### Http Requests
 
+```js
+axios.METHOD(URL, BODY);
+```
+
  - Methods can send http requests to interact with the server
  - Requests can be sent at certain lifecycles in React - `componentDidMount` / `componentWillUnmount` / etc...
  - Or they can be sent at certain events in the Input - `onChange` / `onClick` / `onMouseOver` / etc...
 
 ### Promises
+
+```js
+let promise = axios.METHOD(URL, BODY);
+promise.then(response => console.log(response.data)).catch(err => console.log(err));
+```
 
  - Http requests return promises
  - Promises can have one of three statuses - pending, fulfilled, or rejected
@@ -60,17 +69,31 @@
 
 ### Server
 
- - The server is like a massive event-listener waiting for requests
+```js
+const express = require('express');
+const app = express();
+```
+
+ - The server (app) is like a massive event-listener waiting for requests
  - Until a request is received, the server just sits and waits
  - When a request is received, the server runs through it's endpoints to find a matching method and url
  - When the matching endpoint is found, the callback function belonging to that endpoint is fired
 
 ### Middleware
 
+```js
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+```
+
  - Top-level middlewares are functions that the app will invoke on each request before sending the request to its matching endpoint
  - BodyParser.json() can be used as a middleware to give our endpoints easy access to the body of any request
 
 ### Endpoints
+
+```js
+app.METHOD(URL, CALLBACK);
+```
 
   method:   |  url:             |  body:                            |  response:
 :-----------|:------------------|:----------------------------------|:----------------------
@@ -103,6 +126,15 @@
  - If a bad status code (400, 500, etc...) is sent, the promise will be rejected and the `.catch()` callbacks will be fired
 
 ## More on Promises...
+
+```js
+axios.METHOD(URL, BODY)
+    .then(response => response)
+    .then(response => response.data)
+    .then(data => console.log(data))
+    .then(() => throw new Error('catch me!'))
+    .catch(err => console.log(err));
+```
 
  - Promise.then() and Promise.catch() can be chained any number of times in order to invoke multiple functions when a promise is fulfilled
  - Each promise keeps track of all `.then()` and `.catch()` callbacks in order
