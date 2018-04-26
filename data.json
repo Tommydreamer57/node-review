@@ -1,0 +1,74 @@
+[
+    {
+        "value": "TIRE",
+        "defined": true,
+        "entry": {
+            "word": "tire",
+            "matchType": "inflection",
+            "score": 12.682389,
+            "id": "tire",
+            "region": "gb",
+            "matchString": "tire"
+        }
+    },
+    {
+        "value": "SEA",
+        "defined": true,
+        "entry": {
+            "region": "gb",
+            "word": "sea",
+            "matchType": "inflection",
+            "matchString": "sea",
+            "id": "sea",
+            "score": 12.682389
+        }
+    },
+    {
+        "value": "STIG",
+        "defined": false,
+        "entry": {
+            "id": "snig",
+            "matchString": "stig",
+            "region": "gb",
+            "matchType": "fuzzy",
+            "score": 4.190267,
+            "word": "snig"
+        }
+    },
+    {
+        "value": "SEE",
+        "defined": true,
+        "entry": {
+            "word": "see",
+            "matchType": "inflection",
+            "score": 12.682389,
+            "id": "see",
+            "region": "gb",
+            "matchString": "see"
+        }
+    },
+    {
+        "value": "SETS",
+        "defined": true,
+        "entry": {
+            "region": "gb",
+            "word": "set",
+            "matchType": "inflection",
+            "matchString": "sets",
+            "id": "set",
+            "score": 8.016775
+        }
+    },
+    {
+        "value": "SET",
+        "defined": true,
+        "entry": {
+            "id": "set",
+            "region": "gb",
+            "matchType": "inflection",
+            "score": 12.682389,
+            "matchString": "set",
+            "word": "set"
+        }
+    }
+]
