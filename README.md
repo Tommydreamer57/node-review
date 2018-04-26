@@ -106,6 +106,6 @@
 
  - Promise.then() and Promise.catch() can be chained any number of times in order to invoke multiple functions when a promise is fulfilled
  - Each promise keeps track of all `.then()` and `.catch()` callbacks in order
-     - The first `.then()` callback will be invoked with the response received from the request
+     - The first `.then()` callback will be invoked with the response received from the request as its argument
      - Each following `.then()` callback will be invoked with the `return` of the previous callback
- - If an error is thrown inside any `.then()` callbacks, the `.then()` chain will be ended and the `.catch()` callbacks will then be fired
+ - If an error is thrown inside any `.then()` callbacks, the `.then()` chain will be ended and the `.catch()` callbacks will then be fired with the error its an argument
