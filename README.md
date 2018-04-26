@@ -101,4 +101,11 @@
  - Once the response is sent, the promise on the front end will be either fulfilled or rejected depending on the status code
  - If a good status code (200, 202, etc...) is sent, the promise will be fulfilled and the `.then()` callbacks will be fired
  - If a bad status code (400, 500, etc...) is sent, the promise will be rejected and the `.catch()` callbacks will be fired
- - Note that if an error is thrown inside any `.then()` callbacks, the `.then()` chain will be ended and the `.catch()` callbacks will then be fired
+
+## More on Promises...
+
+ - Promise.then() and Promise.catch() can be chained any number of times in order to invoke multiple functions when a promise is fulfilled
+ - Each promise keeps track of all `.then()` and `.catch()` callbacks in order
+     - The first `.then()` callback will be invoked with the response received from the request
+     - Each following `.then()` callback will be invoked with the `return` of the previous callback
+ - If an error is thrown inside any `.then()` callbacks, the `.then()` chain will be ended and the `.catch()` callbacks will then be fired
