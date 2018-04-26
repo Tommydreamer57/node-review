@@ -93,4 +93,12 @@
  - Each callback has access to both the request and the response objects through its first and second parameters, respectively
  - Parameters from the url can be accessed through `request.params[parameterName]`
  - With body-parser, the body of the request is accessable through `request.body`
- - In the controller, 
+ - After any logic has been performed, the status can be set trough `response.status(statusCode)`
+ - Data can be sent with the response through chaining onto the status - `response.status(statusCode).send(data)
+
+### Promises
+
+ - Once the response is sent, the promise on the front end will be either fulfilled or rejected depending on the status code
+ - If a good status code (200, 202, etc...) is sent, the promise will be fulfilled and the `.then()` callbacks will be fired
+ - If a bad status code (400, 500, etc...) is sent, the promise will be rejected and the `.catch()` callbacks will be fired
+ - Note that if an error is thrown inside any `.then()` callbacks, the `.then()` chain will be ended and the `.catch()` callbacks will then be fired
